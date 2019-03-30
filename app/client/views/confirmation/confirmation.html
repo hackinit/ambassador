@@ -8,14 +8,14 @@
 
       <div class="ui form">
 
-        <div class="divided title">Basic Details</div>
+        <div class="divided title">基本个人信息</div>
 
         <fieldset ng-disabled="pastConfirmation">
 
           <div class="field">
-            <label> What's your phone number? (required) </label>
+            <label> 你的联系方式(手机) (必填) </label>
             <p>
-              We need this in case we need to get ahold of you!
+              在特殊情况下,我们可能需要与你保持联系
             </p>
             <input type="tel"
                    name="phone"
@@ -23,15 +23,15 @@
                    placeholder="(123) - 555 - 1234"
                    required>
           </div>
-
+<!--   校园大使不须要吧
           <div class="field">
-            <label> Dietary Restrictions </label>
+            <label> 餐饮忌口 </label>
 
             <p>
-              If your restriction is not included here, please let us know in the additional notes at the bottom.
+              如果你的餐饮忌口不在此列, 请务必在表单末尾的其他需求中注明.
             </p>
             <p>
-              We'll make sure you get fed :)
+              我们会确保你的餐饮供给 :)
             </p>
 
           </div>
@@ -49,15 +49,15 @@
           </div>
 
           <div class="field">
-            <label> Shirt Size (required) </label>
+            <label> 文化衫尺码 (必填) </label>
             <p>
-              Let's get you some swag!
+              我们会为你准备超级酷炫的文化衫!
             </p>
             <select
               name="shirt"
               ng-model="user.confirmation.shirtSize"
               required>
-              <option value="">Shirt Size</option>
+              <option value="">-尺码-</option>
               <option value="XS">Unisex X-Small</option>
               <option value="S">Unisex Small</option>
               <option value="M">Unisex Medium</option>
@@ -73,7 +73,7 @@
             </select>
           </div>
 
-          <div class="field">
+        <div class="field">
             <label>
               Will you be needing hardware?
             </label>
@@ -102,7 +102,7 @@
           <div class="divided title"> Skills & Accomplishments </div>
 
           <div class="field">
-            <label> What are you studying? </label>
+            <label> 你的学习方向/专业是? </label>
             <input type="text"
                    name="study"
                    placeholder="Computer Science, Product Design, Basket Weaving, etc."
@@ -117,7 +117,7 @@
                    ng-model="user.confirmation.github">
           </div>
 
-          <div class="field">
+           <div class="field">
             <label> Twitter </label>
             <input type="text"
                    name="twitter"
@@ -315,7 +315,7 @@
 
           <br>
           <br>
-
+ -->
           <div class="divided title">Legal</div>
 
           <div class="field">
@@ -360,7 +360,7 @@
                    ng-model="user.confirmation.signaturePhotoRelease">
           </div>
 
-          <div class="field">
+<!--           <div class="field">
             <label> Code of Conduct </label>
             <p>
               <a
@@ -379,7 +379,7 @@
                    name="signatureCodeOfConduct"
                    placeholder="Your Full Legal Name"
                    ng-model="user.confirmation.signatureCodeOfConduct">
-          </div>
+          </div> -->
 
           <br>
           <br>
@@ -388,10 +388,10 @@
 
           <div class="field">
             <label>
-              Additional Notes
+              其他需求/问题
             </label>
             <p>
-              If there's anything else you need to let us know, tell us here!
+              如果有其他任何需求或是希望问我们的问题请在此注明!
             </p>
             <textarea
               ng-model="user.confirmation.notes"></textarea>
@@ -401,7 +401,7 @@
             <button type="submit"
                     class="fluid ui purple button"
                     ng-click="submitForm()">
-              Submit
+              提交
             </button>
           </div>
 
