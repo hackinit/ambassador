@@ -101,7 +101,7 @@ angular.module('reg')
             visible: true
           },
           confirm: {
-            text: "是的，我确认放弃这次机会",
+            text: "是的，我确认（此次）放弃成为校园大使",
             value: true,
             visible: true,
             className: "danger-button"
