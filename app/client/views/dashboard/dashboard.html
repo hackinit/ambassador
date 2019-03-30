@@ -68,14 +68,14 @@
           {{ timeClose }}
         </div>
 
-        <!-- <div
+        <div
           ng-class="settings.timeConfirm"
           ng-if="dashState('admittedAndCanConfirm') || dashState('admittedAndCannotConfirm') || dashState('confirmed') || dashState('declined')">
           <strong>
-              确认参赛截止日期：
+               校园大使确认截止日期：
           </strong>
           {{ timeConfirm }}
-        </div> -->
+        </div>
 
         <div
           ng-if="dashState('openAndIncomplete')"
@@ -185,12 +185,12 @@
 
           <div class="ui purple button"
                ui-sref="app.confirmation">
-            我确认参赛
+            我确认加入 THE Hack 2019 校园大使
           </div>
 
           <div class="ui red button"
                ng-click="declineAdmission()">
-               无法参赛，我放弃参赛资格
+               无法加入 THE Hack 2019 校园大使，我放弃这次机会
           </div>
 
         </div>
