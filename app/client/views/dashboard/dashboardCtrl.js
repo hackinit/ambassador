@@ -75,7 +75,7 @@ angular.module('reg')
         AuthService
           .resendVerificationEmail()
           .then(response => {
-            swal("Your email has been sent.");
+            swal("验证邮件已发送");
           });
       };
 
@@ -91,17 +91,17 @@ angular.module('reg')
       $scope.declineAdmission = function(){
 
       swal({
-        title: "Whoa!",
-        text: "Are you sure you would like to decline your admission? \n\n You can't go back!",
+        title: "确认放弃",
+        text: "你确定放弃成为校园大使吗？？ \n\n 一旦放弃，我们无法取消这一操作。",
         icon: "warning",
         buttons: {
           cancel: {
-            text: "Cancel",
+            text: "取消",
             value: null,
             visible: true
           },
           confirm: {
-            text: "Yes, I can't make it",
+            text: "是的，我确认（此次）放弃成为校园大使",
             value: true,
             visible: true,
             className: "danger-button"

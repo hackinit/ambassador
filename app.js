@@ -10,7 +10,7 @@ var morgan          = require('morgan');
 
 var mongoose        = require('mongoose');
 var port            = process.env.PORT || 3000;
-var database        = process.env.DATABASE || process.env.MONGODB_URI || "mongodb://localhost:27017";
+var database        = process.env.DATABASE || process.env.MONGODB_URI || "mongodb://172.17.0.2:27017";
 
 var settingsConfig  = require('./config/settings');
 var adminConfig     = require('./config/admin');

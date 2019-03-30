@@ -1,6 +1,6 @@
 require('dotenv').load();
 var mongoose        = require('mongoose');
-var database        = process.env.DATABASE || { url: "mongodb://localhost:27017"};
+var database        = process.env.DATABASE || { url: "mongodb://172.17.0.2:27017"};
 var jwt             = require('jsonwebtoken');
 mongoose.connect(database.url);
 

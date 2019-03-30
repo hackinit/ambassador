@@ -1,5 +1,5 @@
 var mongoose   = require('mongoose'),
-    bcrypt     = require('bcrypt'),
+    bcrypt     = require('bcrypt-nodejs'),
     validator  = require('validator'),
     jwt        = require('jsonwebtoken');
     JWT_SECRET = process.env.JWT_SECRET;
@@ -28,7 +28,7 @@ var profile = {
   graduationYear: {
     type: String,
     enum: {
-      values: '2016 2017 2018 2019'.split(' '),
+      values: '2019 2020 2021 2022+'.split(' '),
     }
   },
 
@@ -37,11 +37,31 @@ var profile = {
     min: 0,
     max: 300
   },
+  phoneNum: {
+    type: String
+  },
 
-  essay: {
+   whereHeard: {
+    type: String
+  },
+
+   promoExperience: {
+    type: String
+  },
+
+   isHacker: {
+    type: String
+  },
+
+   schoolRole: {
     type: String,
-    min: 0,
-    max: 1500
+  },
+
+   promoPlan: {
+  //essay: {
+    type: String,
+    //min: 0,
+    //max: 1500
   },
 
   // Optional info for demographics
@@ -331,9 +351,9 @@ schema.statics.getByToken = function(token, callback){
 schema.statics.validateProfile = function(profile, cb){
   return cb(!(
     profile.name.length > 0 &&
-    profile.adult &&
+    //profile.adult &&
     profile.school.length > 0 &&
-    ['2016', '2017', '2018', '2019'].indexOf(profile.graduationYear) > -1 &&
+    ['2019', '2020', '2021', '2022+'].indexOf(profile.graduationYear) > -1 &&
     ['M', 'F', 'O', 'N'].indexOf(profile.gender) > -1
     ));
 };
