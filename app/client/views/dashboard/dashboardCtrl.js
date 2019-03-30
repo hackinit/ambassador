@@ -91,8 +91,8 @@ angular.module('reg')
       $scope.declineAdmission = function(){
 
       swal({
-        title: "确认放弃参赛",
-        text: "你确定自愿放弃参赛资格吗？ \n\n 一旦放弃，我们无法取消这一操作。",
+        title: "确认放弃",
+        text: "你确定放弃成为校园大使吗？？ \n\n 一旦放弃，我们无法取消这一操作。",
         icon: "warning",
         buttons: {
           cancel: {
@@ -101,7 +101,7 @@ angular.module('reg')
             visible: true
           },
           confirm: {
-            text: "是的，我确认放弃参赛资格",
+            text: "是的，我确认放弃这次机会",
             value: true,
             visible: true,
             className: "danger-button"
