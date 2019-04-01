@@ -79,6 +79,23 @@ module.exports = function(router){
       });
   });
 
+  router.post('/received',
+    function(req, res, next){
+      var email = req.body.email;
+      if (!email){
+        return res.status(400).send();
+      }
+
+      UserController.sendApplicationReceivedEmail(email, function(err){
+        if(err){
+          return res.status(400).send(err);
+        }
+        return res.json({
+          message: 'Email Sent'
+        });
+      });
+  });
+
   router.post('/reset',
     function(req, res, next){
       var email = req.body.email;

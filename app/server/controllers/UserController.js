@@ -539,6 +539,23 @@ UserController.sendPasswordResetEmail = function(email, callback){
 };
 
 /**
+ * Application received email
+ * @param  {[type]}   email    [description]
+ * @param  {Function} callback [description]
+ * @return {[type]}            [description]
+ */
+UserController.sendApplicationReceivedEmail = function(email, callback){
+  User
+    .findOneByEmail(email)
+    .exec(function(err, user){
+      if (err || !user){
+        return callback(err);
+      }
+      Mailer.sendApplicationReceivedEmail(email, callback);
+    });
+};
+
+/**
  * UNUSED
  *
  * Change a user's password, given their old password.

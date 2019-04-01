@@ -94,6 +94,13 @@ angular.module('reg')
           });
       };
 
+      authService.sendReceivedEmail = function(email){
+        return $http
+          .post('/auth/received', {
+            email: email
+          });
+      };
+
       authService.sendResetEmail = function(email){
         return $http
           .post('/auth/reset', {

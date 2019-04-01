@@ -191,7 +191,44 @@ controller.sendPasswordChangedEmail = function(email, callback){
       callback(err, info);
     }
   });
+};
+
+/**
+ * Send a application received email.
+ * @param  {[type]}   email    [description]
+ * @param  {Function} callback [description]
+ */
+controller.sendApplicationReceivedEmail = function(email, callback){
+
+  var options = {
+    to: email,
+    subject: "["+HACKATHON_NAME+"] - 已收到你的申请"
+  };
+
+  var locals = {
+    title: '已收到你的申请',
+    body: '我们已收到你的校园大使申请, 相关团队会认真审核并及时给出反馈意见.',
+  };
+
+  /**
+   * Eamil-verify takes a few template values:
+   * {
+   *   verifyUrl: the url that the user must visit to verify their account
+   * }
+   */
+  sendOne('email-basic', options, locals, function(err, info){
+    if (err){
+      console.log(err);
+    }
+    if (info){
+      console.log(info.message);
+    }
+    if (callback){
+      callback(err, info);
+    }
+  });
 
 };
+
 
 module.exports = controller;
